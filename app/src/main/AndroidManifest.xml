@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="demo.ndk.com.myndk">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name="com.gds.activity.MyViewActivity" />
+        <activity android:name="com.gds.activity.RecycleviewActivity" />
+        <activity android:name="com.gds.activity.TestCanvasActivity" />
+        <activity android:name="com.gds.activity.GestureTestActivity" />
+        <activity android:name="com.gds.activity.GestureDetectorActivity">
+
+        </activity>
+        <activity android:name="com.gds.activity.WebAppActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
