@@ -1,5 +1,6 @@
-package com.gds.materialdesign;
+package com.gds.materialdesign.activity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -84,6 +85,9 @@ public class MaterialActivity extends AppCompatActivity implements MainView {
             case R.id.navigation_item_about:
                 switch2About();
                 break;
+            case R.id.navigation_video_list:
+                startActivity(new Intent(MaterialActivity.this,VideoListActivity.class));
+                break;
             default:
                 switch2News();
                 break;
@@ -134,4 +138,7 @@ public class MaterialActivity extends AppCompatActivity implements MainView {
         getSupportFragmentManager().beginTransaction().replace(R.id.frame_content, new AboutFragment()).commit();
         mToolbar.setTitle(R.string.navigation_about);
     }
+
+
+
 }

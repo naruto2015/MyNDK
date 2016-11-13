@@ -15,7 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.gds.materialdesign.NewsDetailActivity;
+import com.gds.materialdesign.activity.NewsDetailActivity;
 import com.gds.materialdesign.adapter.NewsAdapter;
 import com.gds.materialdesign.bean.NewsBean;
 import com.gds.materialdesign.model.NewsModel;

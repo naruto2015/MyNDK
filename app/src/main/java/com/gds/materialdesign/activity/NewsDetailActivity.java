@@ -1,4 +1,4 @@
-package com.gds.materialdesign;
+package com.gds.materialdesign.activity;
 
 
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -15,13 +15,16 @@ import com.gds.materialdesign.model.NewsModel;
 import com.gds.materialdesign.model.OnLoadNewsDetailListener;
 import com.gds.materialdesign.modelimpl.NewsModelImpl;
 import com.gds.materialdesign.utils.ImageLoaderUtils;
+import com.gds.materialdesign.utils.ToolsUtil;
 import com.gds.materialdesign.view.NewsDetailView;
 
 import org.sufficientlysecure.htmltextview.HtmlTextView;
 
 import demo.ndk.com.myndk.R;
+import me.imid.swipebacklayout.lib.SwipeBackLayout;
+import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
 
-public class NewsDetailActivity extends AppCompatActivity implements NewsDetailView,OnLoadNewsDetailListener{
+public class NewsDetailActivity extends SwipeBackActivity implements NewsDetailView,OnLoadNewsDetailListener{
 
 
     private NewsBean mNews;
@@ -30,6 +33,7 @@ public class NewsDetailActivity extends AppCompatActivity implements NewsDetailV
 
     //private NewsDetailView mNewsDetailView;
     private NewsModel mNewsModel;
+    private SwipeBackLayout mSwipeBackLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +46,7 @@ public class NewsDetailActivity extends AppCompatActivity implements NewsDetailV
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,7 +54,9 @@ public class NewsDetailActivity extends AppCompatActivity implements NewsDetailV
             }
         });
 
-
+        mSwipeBackLayout = getSwipeBackLayout();
+        mSwipeBackLayout.setEdgeSize(ToolsUtil.getWidthInPx(this));
+        mSwipeBackLayout.setEdgeTrackingEnabled(SwipeBackLayout.EDGE_LEFT);
 
         mNews = (NewsBean) getIntent().getSerializableExtra("news");
 

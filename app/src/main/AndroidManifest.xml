@@ -22,9 +22,9 @@
         <activity android:name="com.gds.activity.TestCanvasActivity" />
         <activity android:name="com.gds.activity.GestureTestActivity" />
         <activity android:name="com.gds.activity.GestureDetectorActivity" />
-        <activity android:name="com.gds.activity.WebAppActivity"></activity>
+        <activity android:name="com.gds.activity.WebAppActivity" />
         <activity
-            android:name="com.gds.materialdesign.MaterialActivity"
+            android:name="com.gds.materialdesign.activity.MaterialActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,8 +32,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.gds.materialdesign.NewsDetailActivity"
-            android:theme="@style/AppTheme.NoActionBar.Translucent"></activity>
+        <activity
+            android:name="com.gds.materialdesign.activity.NewsDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar.Translucent" />
+        <activity android:name="com.gds.materialdesign.activity.VideoListActivity"></activity>
     </application>
 
 </manifest>
