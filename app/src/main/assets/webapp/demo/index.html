@@ -6,39 +6,175 @@
 	<title>Document</title>
 
 
-		<!-- 新 Bootstrap 核心 CSS 文件 -->
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+  <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+ <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+  <script type="text/javascript" src="../js/bootstrap.min.js"></script>
 
-	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-	 <script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
-
-	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/mycss/index.css">
+	<script type="text/javascript" src="../js/myjs/index.js"></script>
 
 </head>
 <body>
 
+ <div id="myCarousel" class="carousel slide" >
+  <!-- 轮播（Carousel）指标 -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>   
+  <!-- 轮播（Carousel）项目 -->
+  <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="../img/images/new_me.jpg" alt="First slide">
+        </div>
+        <div class="item">
+          <img src="../img/images/pic1.jpg" alt="Second slide">
+        </div>
+        <div class="item">
+          <img src="../img/images/pic2.jpg" alt="Third slide">
+        </div>
+  </div>
+   
+</div> 
+
 
 
 <div class="row">
-  <div class="col-md-3">
+  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
   	<a href="#">
-  		<img src="../img/images/touxiang1.png" style="width: 100px;height: 100px">
+  	<div>
+  		<img src="../img/images/touxiang1.png">
+  		<span>职位搜索</span>
+  	</div>
   	</a>
   </div>
 
-  <div class="col-md-3">.col-md-4</div>
-  <div class="col-md-3">.col-md-4</div>
-  <div class="col-md-3">.col-md-4</div>
+  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+  	<a href="#">
+  	<div>
+  		<img src="../img/images/touxiang3.png">
+  		<span>我的51JOB</span>
+  	</div>
+  	</a>
+  </div>
+  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+  	<a href="#">
+  	<div>
+  		<img src="../img/images/touxiang2.png">
+  		<span>谁看过我</span>
+  	</div>
+  	</a>
+  </div>
+
+  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+  	<a href="#">
+  	<div>
+  		<img src="../img/images/touxiang4.png">
+  		<span>我的简历</span>
+  	</div>
+  	</a>
+  </div>
+
+
+  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+  	<a href="#">
+  	<div>
+  		<img src="../img/images/touxiang5.png">
+  		<span>校园招聘</span>
+  	</div>
+  	</a>
+  </div>
+
+  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+  	<a href="#">
+  	<div>
+  		<img src="../img/images/touxiang6.png">
+  		<span>内部推荐</span>
+  	</div>
+  	</a>
+  </div>
+
+
+  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+  	<a href="#">
+  	<div>
+  		<img src="../img/images/touxiang1.png">
+  		<span>查看简历</span>
+  	</div>
+  	</a>
+  </div>
+
+  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+  	<a href="#">
+  	<div>
+  		<img src="../img/images/touxiang4.png">
+  		<span>更多</span>
+  	</div>
+  	</a>
+  </div>
+
+   
 </div>
 
-<div class="row">
-  <div class="col-md-3">.col-md-4</div>
-  <div class="col-md-3">.col-md-4</div>
-  <div class="col-md-3">.col-md-4</div>
-  <div class="col-md-3">.col-md-4</div>
-</div>
+<div id="bg"></div>
+<div class="jobfind">
+	<div class="jobmore" id="job">
+	    <div class="jobl">
+	    	<span>职位发现</span>
+	    </div>
+		<div class="jobr">
+			<a>查看更多</a>
+		</div>	
+	</div>
+
  
+
+</div>
+<div id="bg"></div>
+<div class="error">
+	 
+
+</div>
+
+<div id="bg"></div>
+
+<div class="last">
+	 <div class="row">
+	 	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" id="lastleft">
+		  	  <div class="lastl">
+		  	  	<div class="lasttop">优秀职位等你来</div>
+                <div class="lastbo">等你来戳戳戳</div>
+              </div>
+		  	  <div class="lastr">
+		  	  	 <img src="../img/images/touxiang3.png">
+		  	  </div>
+		  	  
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" id="lastleft">
+		  	  <div class="lastl">
+		  	  	<div class="lasttop" id="lastid">职位测试</div>
+                <div class="lastbo">看你适合什么职位</div>
+              </div>
+		  	  <div class="lastr">
+		  	  	 <img src="../img/images/touxiang4.png">
+		  	  </div>
+        </div>
+	 </div>
+</div>
+
+
+<div id="bg"></div>
+
+
+  
+ 
+
+
+
 
 	
 </body>
