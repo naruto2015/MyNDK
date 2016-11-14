@@ -1,1 +1,1 @@
-include ':app', ':swipeback'
+include ':swipeback', ':circleimageview', ':app'

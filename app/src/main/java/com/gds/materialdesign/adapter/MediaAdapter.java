@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 
+import com.gds.materialdesign.bean.MediaBean;
+import com.gds.materialdesign.bean.NewsBean;
 import com.gds.materialdesign.bean.VideoBean;
 import com.gds.materialdesign.utils.ImageLoaderUtils;
 
@@ -15,70 +17,101 @@ import com.gds.materialdesign.utils.ImageLoaderUtils;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import demo.ndk.com.myndk.R;
 
 /**
  * Created by gaodesong on 16/11/13.
  */
 
-public class MediaAdapter extends RecyclerView.Adapter<MediaAdapter.MyViewHolder>{
+public class MediaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
 
 
-    List<VideoBean> list=new ArrayList<>();
+    List<VideoBean> list=null;
     Context context;
 
     private LayoutInflater mInflater;
 
-    //private List<Integer> mHeights;
-    private int height;
-    private int width;
+    private List<Integer> mHeights=new ArrayList<>();
 
-    public MediaAdapter(Context context,List<VideoBean> list){
-        this.list=list;
-        this.context=context;
-        mInflater = LayoutInflater.from(context);
 
+    public void setDate(List<VideoBean> data) {
+        list=data;
+        mHeights.clear();
+        for (int i = 0; i < list.size(); i++)
+        {
+            mHeights.add( (int) (290 + Math.random() * 400));
+            if(list.get(i).media==null){
+                list.remove(i);
+            }
+        }
+
+        notifyDataSetChanged();
     }
+
+        public MediaAdapter(Context context,List<VideoBean> list){
+            this.list=list;
+            this.context=context;
+            mInflater = LayoutInflater.from(context);
+
+        }
+
+        public MediaAdapter(Context context){
+
+            this.context=context;
+            mInflater = LayoutInflater.from(context);
+
+
+        }
+
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
 
-        MyViewHolder holder=new MyViewHolder(mInflater.inflate(R.layout.view_video_list_item,null));
-
+        MyViewHolder holder=new MyViewHolder(mInflater.inflate(R.layout.view_video_list_item,parent,false));
 
 
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
 
-        String[] se=list.get(position).media.pic_size.split("*");
-        width= Integer.parseInt(se[1]);
-        height= Integer.parseInt(se[0]);
-        ViewGroup.LayoutParams lp = holder.video_img.getLayoutParams();
-        lp.height=height;
-        lp.width=width;
-        holder.video_img.setLayoutParams(lp);
 
-        ImageLoaderUtils.display(context,holder.video_img,list.get(position).media.cover_pic);
+        if(list!=null){
+            ViewGroup.LayoutParams lp = ((MyViewHolder) holder).video_img.getLayoutParams();
+            lp.height=mHeights.get(position);
+            ((MyViewHolder) holder).video_img.setLayoutParams(lp);
+            MediaBean mediaBean=new MediaBean();
+            mediaBean=list.get(position).media;
+            ImageLoaderUtils.display(context,((MyViewHolder) holder).video_img,mediaBean.cover_pic);
+            ImageLoaderUtils.display(context,((MyViewHolder) holder).avatar,list.get(position).user.avatar);
+        }
+
+
 
     }
 
     @Override
     public int getItemCount() {
-        return list.size();
+        if(list!=null && list.size()>0){
+            return list.size();
+        }
+        return 0;
+
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder{
 
 
         public ImageView video_img;
+        public CircleImageView avatar;
         public MyViewHolder(View itemView) {
             super(itemView);
             video_img= (ImageView) itemView.findViewById(R.id.video_img);
+            avatar= (CircleImageView) itemView.findViewById(R.id.avatar);
         }
 
 
